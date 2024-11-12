@@ -2,7 +2,16 @@
 
 namespace App\Controller;
 
-class DefaultController
-{
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
+use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\Routing\Annotation\Route;
 
+class DefaultController extends AbstractController
+{
+    #[Route('/')]
+    public function home(): Response
+    {
+        // appeler la reponse voulue...
+        return new Response(content: 'Bonjour');
+    }
 }
